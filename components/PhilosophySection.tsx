@@ -13,7 +13,7 @@ export default function PhilosophySection() {
   ];
 
   return (
-    <section className='min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 relative overflow-hidden'>
+    <section className='min-h-screen bg-white relative overflow-hidden'>
       {/* Background texture */}
       <div className='absolute inset-0 opacity-5'>
         <div className='absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.15)_1px,transparent_0)] bg-[length:20px_20px]'></div>
@@ -92,7 +92,7 @@ export default function PhilosophySection() {
                 {/* About Button */}
                 <div>
                   <button className='group flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors'>
-                    <span>About Supersolid</span>
+                    <span>About Icapture</span>
                     <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
                   </button>
                 </div>
