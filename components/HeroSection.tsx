@@ -27,7 +27,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className='relative min-h-screen flex flex-col bg-[#1c1c1c] overflow-hidden'>
+    <section className='relative min-h-screen flex flex-col  overflow-hidden'>
       {/* Dark textured b ackground */}
 
       <div className='relative z-10 flex-1 flex flex-col'>
@@ -40,7 +40,7 @@ export default function HeroSection() {
         >
           <motion.h1
             variants={itemVariants}
-            className='text-5xl font-bold text-white mb-8 leading-tight'
+            className='text-4xl font-bold text-white mb-8 leading-tight'
           >
             We’re a creative-owned agency that helps brands Capture hearts, minds, and markets.
           </motion.h1>
@@ -61,7 +61,7 @@ export default function HeroSection() {
             transition={{ duration: 1.2, delay: 0.5, ease: 'easeOut' }}
             className='text-center'
           >
-            <h2 className='text-4xl md:mt-[6rem] md:text-9xl lg:text-[12rem] xl:text-[16rem] font-bold text-white tracking-tight leading-none'>
+            <h2 className='text-4xl md:mt-[4rem] md:text-9xl lg:text-[12rem] xl:text-[16rem] font-bold text-white tracking-tight leading-none'>
               ICAPTURE
             </h2>
           </motion.div>

@@ -4,6 +4,7 @@ import FeaturedWork from '@/components/FeaturedWork';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import Navigation from '@/components/Navigation';
+import PhilosophySection from '@/components/PhilosophySection';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='min-h-screen bg-white'>
+    <main className='min-h-screen '>
       {/* Time Display */}
       {/* <div className='fixed top-20 right-4 z-40 text-sm text-dark-600 font-mono'>{currentTime}</div> */}
 
@@ -46,9 +47,9 @@ export default function Home() {
       </section>
 
       {/* Philosophy Section */}
-      {/* <section id='about'>
+      <section id='about'>
         <PhilosophySection />
-      </section> */}
+      </section>
 
       {/* Testimonials */}
       {/* <section>

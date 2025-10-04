@@ -3,8 +3,10 @@
 import { projects } from '@/projects';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useState } from 'react';
 
 export default function FeaturedWork() {
+  const [showAllWork, setShowAllWork] = useState(false);
   const featuredProjects = [
     {
       id: 1,
@@ -90,7 +92,7 @@ export default function FeaturedWork() {
               onClick={() => window.open(project.href, '_blank')}
             >
               {/* Project Image */}
-              <div className='relative h-[500px] lg:h-[600px] overflow-hidden rounded-lg'>
+              <div className='relative h-[500px]  overflow-hidden rounded-lg'>
                 <img
                   src={project.image.src}
                   alt={`${project.title} - ${project.subtitle}`}
@@ -124,6 +126,56 @@ export default function FeaturedWork() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Third Project - Shows when "See all work" is clicked */}
+        {showAllWork && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className='mt-12'
+          >
+            <motion.div
+              className='group relative cursor-pointer'
+              onClick={() => window.open(projects[2].href, '_blank')}
+            >
+              {/* Project Image */}
+              <div className='relative h-[500px] overflow-hidden rounded-lg'>
+                <img
+                  src={projects[2].image.src}
+                  alt={`${projects[2].title} - ${projects[2].subtitle}`}
+                  className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-105'
+                  loading='lazy'
+                />
+
+                {/* Dark overlay */}
+                <div className='absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300'></div>
+
+                {/* Category Badge */}
+                <div className='absolute top-6 left-6'>
+                  <span className='px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-black border border-white/20'>
+                    {projects[2].category}
+                  </span>
+                </div>
+
+                {/* Project Info Overlay */}
+                <div className='absolute bottom-6 left-6 right-6'>
+                  <div className='space-y-2'>
+                    <h3 className='text-2xl lg:text-3xl font-bold text-white'>
+                      {projects[2].title}
+                    </h3>
+                    <h4 className='text-lg lg:text-xl font-medium text-white/80'>
+                      {projects[2].subtitle}
+                    </h4>
+                  </div>
+                </div>
+
+                {/* Hover Effect */}
+                <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300'></div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
 
         {/* Additional Projects Grid */}
         <motion.div
@@ -181,10 +233,17 @@ export default function FeaturedWork() {
           viewport={{ once: true }}
           className='text-center mt-20'
         >
-          <button className='group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/90 hover:scale-105'>
+          <button
+            onClick={() => setShowAllWork(!showAllWork)}
+            className='group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/90 hover:scale-105'
+          >
             <span className='flex items-center gap-2'>
-              See all work
-              <ArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform duration-300' />
+              {showAllWork ? 'Show less' : 'See all work'}
+              <ArrowRight
+                className={`w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 ${
+                  showAllWork ? 'rotate-180' : ''
+                }`}
+              />
             </span>
           </button>
         </motion.div>

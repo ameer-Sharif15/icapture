@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 
 export default function PhilosophySection() {
@@ -62,7 +61,7 @@ export default function PhilosophySection() {
                             COMING SOON
                           </div>
                           <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2 text-slate-300 text-xs font-light opacity-30'>
-                            Supersolid Agency Reel 2025
+                            Icapture Agency Reel 2025
                           </div>
                         </div>
                       </div>
@@ -85,14 +84,15 @@ export default function PhilosophySection() {
               {/* Philosophy Text */}
               <div className='space-y-6'>
                 <p className='text-lg text-slate-700 leading-relaxed'>
-                  This guiding philosophy is underpinned by a seamless agency structure and a highly
-                  collaborative way of working that delivers creative excellence and effectiveness.
+                  This guiding philosophy is underpinned by a seamless Icapture structure and a
+                  highly collaborative way of working that delivers creative excellence and
+                  effectiveness.
                 </p>
 
                 {/* About Button */}
                 <div>
                   <button className='group flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors'>
-                    <span>About Icapture</span>
+                    <span>About ICapture</span>
                     <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
                   </button>
                 </div>
@@ -104,35 +104,17 @@ export default function PhilosophySection() {
               {/* Large text blocks */}
               <div className='space-y-8'>
                 <h2 className='text-4xl lg:text-5xl font-bold text-slate-900 leading-tight'>
-                  Supersolid's registered trademark is the unrivalled Return On Ideas we deliver for
+                  Icapture's registered trademark is the unrivalled Return On Ideas we deliver for
                   our clients.
                 </h2>
 
                 <h3 className='text-4xl lg:text-5xl font-bold text-slate-900 leading-tight'>
-                  We believe creativity is the most powerful and profitable investment any
-                  organisation can make.
+                  We believe creativity is the most powerful and profitable investment any agency
+                  can make. organisation can make.
                 </h3>
               </div>
 
               {/* ROIdeas highlights */}
-              <div className='space-y-6'>
-                <h4 className='text-2xl font-bold text-slate-900'>ROIdeas® highlights</h4>
-
-                <div className='space-y-3'>
-                  {stats.map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1, duration: 0.6 }}
-                      viewport={{ once: true }}
-                      className='text-lg text-slate-700'
-                    >
-                      <span className='font-bold'>{stat.value}</span> {stat.label}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
